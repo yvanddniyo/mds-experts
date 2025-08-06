@@ -15,12 +15,12 @@ const afacode = Afacad({
 
 export const metadata: Metadata = {
   title: "MDS Experts Ltd",
-  description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa.",
-  metadataBase: new URL('https://mdsexperts.rw'),
+  description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
+  metadataBase: new URL('https://mds.experts'),
   openGraph: {
     title: "MDS Experts Ltd",
-    description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa.",
-    url: 'https://mdsexperts.rw',
+    description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
+    url: 'https://mds.experts',
     siteName: 'MDS Experts Ltd',
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "MDS Experts Ltd",
-    description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa.",
+    description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
     images: ['../assets/MDS-White.png'],
   },
   icons: {
