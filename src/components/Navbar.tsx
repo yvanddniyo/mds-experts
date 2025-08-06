@@ -1,8 +1,7 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+
 import { useState } from "react"
-import Link from "next/link"
 import Image from "next/image"
 import { NavLinkProps } from "@/type"
 import { NAV_LINKS } from "@/constants/Info"
@@ -10,6 +9,7 @@ import { useScroll } from "@/Hooks/useScroll"
 import mdsExpert from "@/assets/MDS-White.png"
 import { Menu, X } from "lucide-react"
 import { smoothScrollTo, scrollToTop } from "@/lib/smoothScroll"
+import { Button } from "./ui/button"
 
 
 

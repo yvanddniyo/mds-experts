@@ -1,11 +1,11 @@
 "use client";
-import { Navbar } from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import ServicesSection from "./components/ServicesSection";
-import AboutSection from "./components/AboutSection";
-import WhatWeDoSection from "./components/WhatWeDoSection";
-import ContactSection from "./components/ContactSection";
-import CTASection from "./components/CTASection";
+import { Navbar } from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import ServicesSection from "../components/ServicesSection";
+import AboutSection from "../components/AboutSection";
+import WhatWeDoSection from "../components/WhatWeDoSection";
+import ContactSection from "../components/ContactSection";
+import CTASection from "../components/CTASection";
 
 export default function Home() {
   return (
