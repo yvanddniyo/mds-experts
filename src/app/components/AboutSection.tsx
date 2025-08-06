@@ -29,9 +29,33 @@ const AboutSection = () => {
             <p className="text-lg text-gray-700 mb-6">
               With a mission to deliver value through excellent human resource training and development programs, we foster lifelong learning, personal growth, and quality-driven performance. Beyond training, MDS Experts Ltd offers a comprehensive suite of business services including bookkeeping, accounting, tax advisory, and tailored business consultancy designed to support operational excellence, financial compliance, and strategic decision-making.
             </p>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 mb-8">
               Our commitment to meeting clients&apos; evolving needs, promoting continuous improvement, and encouraging self-review makes us your trusted partner in building stronger businesses and more effective teams. At MDS Experts Ltd, we don&apos;t just deliver services we help you thrive, grow, and succeed.
             </p>
+
+            {/* Statistics Section */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="text-center p-4 bg-white rounded-lg shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">18+</div>
+                <div className="text-sm text-gray-600 font-medium">Years of Professional Experience</div>
+              </div>
+              
+              <div className="text-center p-4 bg-white rounded-lg shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">120+</div>
+                <div className="text-sm text-gray-600 font-medium">Trained Certified Professionals (PMP, ACP, PBA)</div>
+              </div>
+              
+              <div className="text-center p-4 bg-white rounded-lg shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">12+</div>
+                <div className="text-sm text-gray-600 font-medium">Countries Operated in Around the World</div>
+              </div>
+            </motion.div>
           </motion.div>
           
           <motion.div 
