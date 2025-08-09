@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import router from "next/router"
 
 const CTASection = () => {
   return (
@@ -36,18 +37,9 @@ const CTASection = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => {
-            const element = document.getElementById('contact');
-            if (element) {
-              const offsetTop = element.offsetTop - 80;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            }
-          }}
+          onClick={() => router.push("/contact")}
         >
-          Start Your Free Consultation
+          Schedule a Consultation
         </motion.button>
       </motion.div>
     </section>

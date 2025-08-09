@@ -1,0 +1,88 @@
+[
+  {
+    "slug": "business-services",
+    "title": "Business Services",
+    "summary": "Professional consultancy to help organizations thrive and achieve sustainable growth.",
+    "applyUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdwwGBn2b7Mq0teSf36RKHDaSYCOFzV-E99u8c4IICKT_uK8g/viewform?usp=header",
+    "sections": [
+      {
+        "title": "What We Offer",
+        "bullets": [
+          "Accounting, Auditing & Tax Consultancy: Comprehensive financial services to ensure compliance and efficiency.",
+          "Business & Strategic Planning Consultancy: Guidance to develop and implement robust business strategies.",
+          "Project Planning, Monitoring & Evaluation Consultancy: Tools and expertise to deliver projects successfully and measure impact."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "professional-courses-and-training",
+    "title": "Professional Courses & Training Services",
+    "summary": "Industry-recognized training programs designed to equip individuals and teams with practical skills, including PMP® cohort-based coaching.",
+    "applyUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdwwGBn2b7Mq0teSf36RKHDaSYCOFzV-E99u8c4IICKT_uK8g/viewform?usp=header",
+    "sections": [
+      {
+        "title": "Available Trainings",
+        "bullets": [
+          "Project Management Professional (PMI-PMP) Training",
+          "Professional in Business Analysis (PMI-PBA) Training",
+          "Agile Certified Practitioner (PMI-ACP) Training",
+          "Planning, Monitoring & Evaluation Training Sessions"
+        ]
+      },
+      {
+        "title": "PMP® Cohort-Based Training",
+        "paragraphs": [
+          "Our PMP® training brings together aspiring and experienced project managers from diverse institutions and organizations, offering both in-person and online learning options.",
+          "Delivered by expert facilitators, the program incorporates real-world case studies from Rwanda and global contexts.",
+          "The program not only prepares you to pass the PMP exam but also helps you build a strong professional network, sharpen leadership skills, and turn your vision for transformation into tangible results."
+        ]
+      },
+      {
+        "title": "Key Highlights",
+        "bullets": [
+          "Location: Kanombe, Kabeza, Kigali, Rwanda",
+          "Duration: 2 months (35 contact hours)",
+          "Tuition: Flexible, based on required hours",
+          "Merit Scholarships: Available for recent graduates and Partners",
+          "Cohort Size: Maximum of 6 participants for personalized attention",
+          "Exam Support: Guidance on exam registration, venue access, and payment facilitation"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "why-pmp-certification-matters",
+    "title": "Why PMP® Certification Matters",
+    "summary": "Validate your expertise across waterfall, agile, and hybrid methodologies with the world’s leading project management certification.",
+    "listOnly": true,
+    "sections": [
+      {
+        "title": "People Domain",
+        "paragraphs": [
+          "Master the leadership and interpersonal skills required to inspire and manage teams in today’s dynamic environment."
+        ]
+      },
+      {
+        "title": "Process Domain",
+        "paragraphs": [
+          "Gain technical proficiency in managing project scope, cost, schedule, resources, procurement, quality, risk, stakeholders, and communications."
+        ]
+      },
+      {
+        "title": "Business Environment Domain",
+        "paragraphs": [
+          "Understand how projects align with organizational strategy and adapt to changing business contexts."
+        ]
+      },
+      {
+        "title": "About PMP®",
+        "paragraphs": [
+          "PMP® is the world’s leading project management certification, issued by the Project Management Institute (PMI). Holding the PMP demonstrates your leadership, competence, and ability to deliver results."
+        ]
+      }
+    ]
+  }
+]
+
+
