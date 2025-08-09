@@ -2,7 +2,8 @@
 import { Navbar } from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import ServicesSection from "../components/ServicesSection";
-import AboutSection from "../components/AboutSection";
+import MissionVisionSection from "../components/MissionVisionSection";
+import WhyUsSection from "../components/WhyUsSection";
 import WhatWeDoSection from "../components/WhatWeDoSection";
 import ContactSection from "../components/ContactSection";
 import CTASection from "../components/CTASection";
@@ -13,8 +14,10 @@ export default function Home() {
       <Navbar />
       <main className="pt-16">
         <HeroSection />
-        <ServicesSection />
-        <AboutSection />
+        {/* Defer motion-heavy section slightly for perceived speed */}
+        <div className="[contain:paint]"><ServicesSection /></div>
+        <MissionVisionSection />
+        <WhyUsSection />
         <WhatWeDoSection />
         <ContactSection />
         <CTASection />

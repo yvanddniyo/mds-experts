@@ -1,4 +1,6 @@
+"use client"
 import { motion } from "framer-motion"
+import { memo } from "react"
 
 const ServicesSection = () => {
   return (
@@ -8,7 +10,7 @@ const ServicesSection = () => {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -25,14 +27,14 @@ const ServicesSection = () => {
             className="p-8 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.35, delay: 0.05, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ y: -5, scale: 1.02 }}
+            whileHover={{ y: -3, scale: 1.01 }}
           >
             <motion.div 
               className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              whileHover={{ rotate: 180 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -58,14 +60,14 @@ const ServicesSection = () => {
             className="p-8 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.35, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ y: -5, scale: 1.02 }}
+            whileHover={{ y: -3, scale: 1.01 }}
           >
             <motion.div 
               className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-6"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              whileHover={{ rotate: 180 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -96,4 +98,4 @@ const ServicesSection = () => {
   )
 }
 
-export default ServicesSection 
+export default memo(ServicesSection)

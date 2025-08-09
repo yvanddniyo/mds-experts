@@ -7,22 +7,23 @@ import { NavLinkProps } from "@/type"
 import { NAV_LINKS } from "@/constants/Info"
 import { useScroll } from "@/Hooks/useScroll"
 import mdsExpert from "@/assets/MDS-White.png"
-import { Link, Menu, X } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Menu, Twitter, X } from "lucide-react"
 import { smoothScrollTo, scrollToTop } from "@/lib/smoothScroll"
 import { Button } from "./ui/button"
 import { useRouter } from "next/navigation"
+import { motion } from "framer-motion"
 
 
 
 
-const NavLink = ({ href, label, scroll, isActive = false, onClick }: NavLinkProps) => (
+const NavLink = ({ label, scroll, isActive = false, onClick }: NavLinkProps) => (
   <button
     onClick={onClick}
     className={`relative cursor-pointer ${scroll ? "text-gray-600" : "text-white"} px-4 py-2 text-sm font-medium transition-all duration-200 group ${
       scroll ? "text-gray-600" : "text-white"
     }`}
   >
-    <span className="block relative text-lg">
+    <span className="block relative text-lg whites">
       {label}
       <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full ${
         isActive ? "w-full" : ""
@@ -40,14 +41,20 @@ export const Navbar = () => {
   const handleLinkClick = (href: string) => {
     setActiveLink(href)
     setIsMobileMenuOpen(false)
-    
-    // Handle smooth scrolling
+
+    // Route navigation for pathname links
+    if (href.startsWith("/")) {
+      router.push(href)
+      return
+    }
+
+    // Handle smooth scrolling for hash links
     if (href === "#home") {
       scrollToTop()
-    } else {
-      const elementId = href.replace("#", "")
-      smoothScrollTo(elementId)
+      return
     }
+    const elementId = href.replace("#", "")
+    smoothScrollTo(elementId)
   }
 
   return (
@@ -88,39 +95,41 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              className={`text-blue-600 border-none bg-white hover:text-blue-600 rounded-full cursor-pointer`}
-              onClick={() => {
-                const element = document.getElementById('services');
-                if (element) {
-                  const offsetTop = element.offsetTop - 80;
-                  window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-            >
-              Get Started
-            </Button>
-            <Button
-              className={`${isScrolled ? "text-gray-600" : "text-white"} hover:border hover:border-white hover:text-white rounded-full cursor-pointer`}
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) {
-                  const offsetTop = element.offsetTop - 80;
-                  window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-            >
-              Free Consultation
-            </Button>
-          </div>
+          <div className="justify-center gap-4 hidden md:flex">
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Twitter className="w-5 h-5 text-blue-600" fill="currentColor" />
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+              <Facebook className="w-5 h-5 text-blue-600" fill="currentColor" />
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Instagram className="w-5 h-5 text-blue-600"  />
+              
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Linkedin className="w-5 h-5 text-blue-600" fill="currentColor" />
+              </motion.a>
+            </div>  
 
           {/* Mobile menu button */}
           <div className="md:hidden">

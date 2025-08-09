@@ -1,3 +1,5 @@
+"use client"
+"use client"
 import { motion } from "framer-motion"
 
 const AboutSection = () => {
@@ -24,13 +26,16 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <p className="text-lg text-gray-700 mb-6">
-              MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.
+            MDS Experts Ltd is a leading Rwandan firm specializing in tax consultancy, bookkeeping, and professional training courses such as PMP, PBA, and ACP. We are dedicated to advancing development across Africa by empowering individuals and organizations through high-quality capacity-building and expert business support services.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              With a mission to deliver value through excellent human resource training and development programs, we foster lifelong learning, personal growth, and quality-driven performance. Beyond training, MDS Experts Ltd offers a comprehensive suite of business services including bookkeeping, accounting, tax advisory, and tailored business consultancy designed to support operational excellence, financial compliance, and strategic decision-making.
+            Our comprehensive business solutions are designed to enhance operational efficiency, ensure financial compliance, and support strategic decision-making.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              Our commitment to meeting clients&apos; evolving needs, promoting continuous improvement, and encouraging self-review makes us your trusted partner in building stronger businesses and more effective teams. At MDS Experts Ltd, we don&apos;t just deliver services we help you thrive, grow, and succeed.
+            Driven by a commitment to adapt to our clients’ evolving needs, foster continuous improvement, and encourage self-assessment, we proudly stand as a trusted partner in building stronger businesses and more effective teams.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+            At MDS Experts Ltd, we don’t just provide services  we enable you to thrive, grow, and succeed.
             </p>
 
             {/* Statistics Section */}

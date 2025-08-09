@@ -71,7 +71,7 @@ const ContactSection = () => {
               <Mail className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold mb-4">🔗 Follow Us</h3>
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center gap-4">
               <motion.a 
                 href="#" 
                 className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200"
