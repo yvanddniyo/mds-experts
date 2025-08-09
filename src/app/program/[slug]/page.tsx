@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const program = getProgramBySlug(slug);
   if (!program || program.listOnly) return { title: "Program Not Found" };
   return {
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProgramDetailPage({ params }: PageProps) {
-  const { slug } = params;
+export default async function ProgramDetailPage({ params }: PageProps) {
+  const { slug } = await params;
   const program = getProgramBySlug(slug);
   if (!program || program.listOnly) notFound();
 
