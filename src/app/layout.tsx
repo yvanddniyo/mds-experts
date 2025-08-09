@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Aleo, Afacad } from "next/font/google";
-import mdsExpert from "@/assets/MDS-White.png";
+import mdsExpert from "@/assets/mds-jpg.jpg";
+import mdsExpert2 from "@/assets/mds-jpg-removebg-preview.png";
 import "./globals.css";
 
 const albertSans = Aleo({
@@ -18,13 +19,13 @@ export const metadata: Metadata = {
   description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
   metadataBase: new URL('https://mds.experts'),
   openGraph: {
-    title: "MDS Experts Ltd",
+    title: "MDS Experts Ltd", 
     description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
     url: 'https://mds.experts',
     siteName: 'MDS Experts Ltd',
     images: [
       {
-        url: '../assets/MDS-White.png',
+        url: mdsExpert2.src,
         width: 800,
         height: 600,
       }
@@ -36,12 +37,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "MDS Experts Ltd",
     description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
-    images: ['../assets/MDS-White.png'],
+    images: [mdsExpert2.src],
   },
   icons: {
-    icon: "../assets/MDS-White.png",
-    shortcut: "../assets/MDS-White.png",
-    apple: "../assets/MDS-White.png",
+    icon: mdsExpert2.src,
+    shortcut: mdsExpert2.src,
+    apple: mdsExpert2.src,
   },
 };
 

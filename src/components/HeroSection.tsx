@@ -16,14 +16,15 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            In-Person, Instructor Led
+            {/* In-Person, Instructor Led */}
+            Live, Professional Expert-Led 
             <motion.span 
               className="block text-blue-200 w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              Professional Excellence
+             Training for Lasting Impact
             </motion.span>
           </motion.h1>
           <motion.p 

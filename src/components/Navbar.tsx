@@ -7,20 +7,22 @@ import { NavLinkProps } from "@/type"
 import { NAV_LINKS } from "@/constants/Info"
 import { useScroll } from "@/Hooks/useScroll"
 import mdsExpert from "@/assets/MDS-White.png"
-import { Menu, X } from "lucide-react"
+import { Link, Menu, X } from "lucide-react"
 import { smoothScrollTo, scrollToTop } from "@/lib/smoothScroll"
 import { Button } from "./ui/button"
+import { useRouter } from "next/navigation"
+
 
 
 
 const NavLink = ({ href, label, scroll, isActive = false, onClick }: NavLinkProps) => (
   <button
     onClick={onClick}
-    className={`relative ${scroll ? "text-gray-600" : "text-white"} px-4 py-2 text-sm font-medium transition-all duration-200 group ${
+    className={`relative cursor-pointer ${scroll ? "text-gray-600" : "text-white"} px-4 py-2 text-sm font-medium transition-all duration-200 group ${
       scroll ? "text-gray-600" : "text-white"
     }`}
   >
-    <span className="block relative">
+    <span className="block relative text-lg">
       {label}
       <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full ${
         isActive ? "w-full" : ""
@@ -33,7 +35,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState("/")
   const { isScrolled } = useScroll()
- 
+  const router = useRouter()
 
   const handleLinkClick = (href: string) => {
     setActiveLink(href)
@@ -59,7 +61,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="relative w-24 h-24 z-50">
+            <div className="relative w-24 h-24 z-50 cursor-pointer" onClick={() => router.push("/")}>
               <Image
                 src={mdsExpert}
                 alt="MDS Experts Logo"
