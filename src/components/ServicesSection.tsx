@@ -1,10 +1,11 @@
 "use client"
 import { motion } from "framer-motion"
+import { BookMinus, Trophy } from "lucide-react"
 import { memo } from "react"
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="pt-[400px] sm:pt-[300px] lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -92,6 +93,25 @@ const ServicesSection = () => {
               Learn More
             </motion.button>
           </motion.div>
+        </div>
+      </div>
+           <div className="absolute -top-10 flex items-center justify-between flex-col lg:flex-row p-4">
+        <div className="shadow-lg  text-black p-4 m-4 rounded-lg z-[200] lg:w-1/3 flex items-center gap-4">
+        <span className="bg-amber-200 p-3 rounded-lg">
+          <BookMinus size={20}/>
+        </span>
+        <p className="text-lg">Professionalism is doing ordinary things with extraordinary consistency.
+        Grow your skills, master your craft,
+        and let excellence become your habit.</p>
+        
+        </div>
+        <div className="bg-green-50 shadow-lg text-black p-4 m-4 rounded-lg z-[200] lg:w-1/3 text-lg flex items-center gap-4">
+        <span className="bg-green-300 p-3 rounded-lg"><Trophy size={20}/></span>
+        <p>
+          Success doesn’t come from luck, it comes from preparation.
+          Learn, improve, and adapt every day.
+          Your growth is your best investment.
+        </p>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
-
+import bussiness from "../assets/f-business.svg"
 const HeroSection = () => {
   const router = useRouter()
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-900 to-indigo-900 text-white">
+    <section id="home" className="relative overflow-hidden text-white rounded-b-4xl pt-16 ">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <motion.div 
           className="text-center"
@@ -21,7 +21,7 @@ const HeroSection = () => {
             {/* In-Person, Instructor Led */}
             In-Person, Expert-Led 
             <motion.span 
-              className="block text-blue-200 w-full text-6xl font-bold"
+              className="block text-blue- w-full text-6xl font-bold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -29,7 +29,7 @@ const HeroSection = () => {
              Professional Course
             </motion.span>
             <motion.span 
-              className="block text-blue-200 w-full"
+              className="block text-blue- w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -38,7 +38,7 @@ const HeroSection = () => {
             </motion.span>
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-xl text-blue-100 mb-8 max-w-xl mx-auto"
+            className="text-xl md:text-xl  mb-8 max-w-xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -62,6 +62,21 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
+      <div className="absolute bottom-6 lg:top-1/2 right-24 opacity-80 animate-pulse w-[50px] h-[50px]"
+        style={{
+          backgroundImage: `url(${bussiness.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
+      <div 
+        className="absolute top-16 lg:bottom-1/2 left-24 w-[50px] h-[50px] opacity-80 animate-pulse"
+        style={{
+          backgroundImage: `url(${bussiness.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
     </section>
   )
 }

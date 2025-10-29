@@ -3,7 +3,7 @@ import router from "next/router"
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <section className="py-20 bg-sky-600 text-white">
       <motion.div 
         className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 30 }}

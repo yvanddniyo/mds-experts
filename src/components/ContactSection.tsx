@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "luc
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <section id="contact" className="py-20 bg-sky-600 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
