@@ -1,10 +1,11 @@
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 import bussiness from "../assets/f-business.svg"
+
 const HeroSection = () => {
   const router = useRouter()
   return (
-    <section id="home" className="relative overflow-hidden text-white rounded-b-4xl pt-16 ">
+    <section id="home" className="relative overflow-hidden text-white rounded-b-4xl pt-16">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <motion.div 
           className="text-center"
@@ -21,7 +22,7 @@ const HeroSection = () => {
             {/* In-Person, Instructor Led */}
             In-Person, Expert-Led 
             <motion.span 
-              className="block text-blue- w-full text-6xl font-bold"
+              className="block text-blue- w-full text-3xl md:text-6xl font-bold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -52,7 +53,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
             <motion.button 
-              className="bg-white text-blue-600 px-8 py-3 rounded-full cursor-pointer font-semibold hover:bg-blue-50 transition-colors duration-200"
+              className="bg-white w-fit text-blue-600 px-8 py-3 rounded-full cursor-pointer font-semibold hover:bg-blue-50 transition-colors duration-200 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => router.push("/program")}

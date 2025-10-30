@@ -6,7 +6,7 @@ import MissionVisionSection from "../components/MissionVisionSection";
 import WhyUsSection from "../components/WhyUsSection";
 import WhatWeDoSection from "../components/WhatWeDoSection";
 import ContactSection from "../components/ContactSection";
-import CTASection from "../components/CTASection";
+// import CTASection from "../components/CTASection";
 
 export default function Home() {
   return (

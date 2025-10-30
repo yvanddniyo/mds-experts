@@ -14,8 +14,6 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 
 
-
-
 const NavLink = ({ label, scroll, isActive = false, onClick }: NavLinkProps) => (
   <button
     onClick={onClick}

@@ -5,7 +5,7 @@ import { memo } from "react"
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="pt-[400px] sm:pt-[300px] lg:py-32 bg-white">
+    <section id="services" className="pt-[440px] sm:pt-[300px] lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
