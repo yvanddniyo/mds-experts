@@ -1,17 +1,17 @@
-import { motion } from "framer-motion"
-import router from "next/router"
+import { motion } from "framer-motion";
+import router from "next/router";
 
 const CTASection = () => {
   return (
     <section className="py-20 bg-sky-600 text-white">
-      <motion.div 
+      <motion.div
         className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <motion.h2 
+        <motion.h2
           className="text-3xl md:text-4xl font-bold mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,16 +20,17 @@ const CTASection = () => {
         >
           Ready to Transform Your Professional Journey?
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="text-xl text-indigo-100 mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Join professionals who have elevated their careers with MDS Experts Ltd.
+          Join professionals who have elevated their careers with MDS Experts
+          Ltd.
         </motion.p>
-        <motion.button 
+        <motion.button
           className="bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-indigo-50 transition-colors duration-200"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +44,7 @@ const CTASection = () => {
         </motion.button>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default CTASection 
+export default CTASection;

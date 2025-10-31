@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Aleo, Afacad } from "next/font/google";
-import mdsExpert from "@/assets/mds-jpg.jpg";
 import mdsExpert2 from "@/assets/mds-jpg-removebg-preview.png";
 import "./globals.css";
 
@@ -16,28 +15,36 @@ const afacode = Afacad({
 
 export const metadata: Metadata = {
   title: "MDS Experts Ltd",
-  description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
-  metadataBase: new URL('https://mds.experts'),
+  description:
+    "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
+  metadataBase: new URL("https://mdsexpertspro.com/"),
   openGraph: {
-    title: "MDS Experts Ltd", 
-    description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
-    url: 'https://mds.experts',
-    siteName: 'MDS Experts Ltd',
+    title: "MDS Experts Ltd",
+    description:
+      "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
+    url: "https://mdsexpertspro.com/",
+    siteName: "MDS Experts Ltd",
     images: [
       {
         url: mdsExpert2.src,
         width: 800,
         height: 600,
-      }
+      },
+      {
+        url: mdsExpert2.src,
+        width: 800,
+        height: 600,
+      },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "MDS Experts Ltd",
-    description: "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
-    images: [mdsExpert2.src],
+    description:
+      "MDS Experts Ltd is a leading Rwandan consultancy and training firm at the forefront of professional development in Africa. We are dedicated to empowering individuals and organizations across diverse sectors through high-quality capacity-building solutions and expert business support services.",
+    images: ["../assets/mds-jpg-removebg-preview.png"],
   },
   icons: {
     icon: mdsExpert2.src,

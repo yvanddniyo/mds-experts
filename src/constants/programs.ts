@@ -22,5 +22,3 @@ export const PROGRAMS: Program[] = rawPrograms as unknown as Program[];
 export function getProgramBySlug(slug: string): Program | undefined {
   return PROGRAMS.find((p) => p.slug === slug);
 }
-
-

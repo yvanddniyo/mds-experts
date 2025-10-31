@@ -6,6 +6,18 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  siteUrl: "https://mdsexpertspro.com",
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+  },
+  changefreq: "daily",
+  sitemapSize: 5000,
 };
 
 export default nextConfig;

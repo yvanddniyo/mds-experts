@@ -13,7 +13,9 @@ export async function generateStaticParams() {
   return PROGRAMS.filter((p) => !p.listOnly).map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const program = getProgramBySlug(slug);
   if (!program || program.listOnly) return { title: "Program Not Found" };
@@ -36,7 +38,7 @@ export default async function ProgramDetailPage({ params }: PageProps) {
             href="/program"
             className="inline-flex items-center gap-2 text-sm font-medium text-blue-700 hover:underline"
           >
-           <ArrowLeftIcon className="size-4" />
+            <ArrowLeftIcon className="size-4" />
             Back to programs
           </Link>
         </div>
@@ -50,8 +52,13 @@ export default async function ProgramDetailPage({ params }: PageProps) {
 
         <div className="mt-10 space-y-10">
           {program.sections.map((section) => (
-            <div key={section.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
+            <div
+              key={section.title}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <h2 className="text-xl font-semibold text-slate-900">
+                {section.title}
+              </h2>
               {section.paragraphs && (
                 <div className="mt-3 space-y-3 text-slate-700 leading-relaxed">
                   {section.paragraphs.map((p) => (
@@ -70,8 +77,16 @@ export default async function ProgramDetailPage({ params }: PageProps) {
           ))}
           {program.applyUrl && (
             <div className="sticky bottom-8 mt-6 flex justify-center">
-              <Button asChild size="lg" className="shadow-lg bg-white text-blue-600 px-8 py-3 rounded-full cursor-pointer font-semibold hover:bg-blue-50 transition-colors duration-200 text-base">
-                <a href={program.applyUrl} target="_blank" rel="noopener noreferrer">
+              <Button
+                asChild
+                size="lg"
+                className="shadow-lg bg-white text-blue-600 px-8 py-3 rounded-full cursor-pointer font-semibold hover:bg-blue-50 transition-colors duration-200 text-base"
+              >
+                <a
+                  href={program.applyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Apply for this program
                 </a>
               </Button>
@@ -82,5 +97,3 @@ export default async function ProgramDetailPage({ params }: PageProps) {
     </section>
   );
 }
-
-

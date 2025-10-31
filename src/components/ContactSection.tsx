@@ -1,116 +1,208 @@
-import { motion } from "framer-motion"
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
+import mdsExpert from "@/assets/MDS-White.png";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-sky-600 text-white">
+    <footer
+      id="contact"
+      className="relative overflow-hidden pt-16 text-white bg-gradient-to-b from-sky-700 via-sky-700 to-sky-800"
+    >
+      {/* Decorative glows */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-sky-300/20 blur-3xl" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-blue-100">
-            Ready to start your professional journey with us?
-          </p>
-        </motion.div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Location */}
-          <motion.div 
-            className="text-center p-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <div className="w-16 h-16 bg-blue-600 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MapPin className="w-8 h-8 text-white" fill="currentColor" />
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div>
+            <div className="relative h-14 w-40">
+              <Image
+                src={mdsExpert}
+                alt="MDS Experts Logo"
+                fill
+                className="object-contain"
+              />
             </div>
-            <h3 className="text-xl font-bold mb-4">📍 LOCATION</h3>
-            <p className="text-blue-100">
-              Kigali, Gasabo, Kanombe kabeza<br />
-              KK-276 ST, Kigali – Rwanda
+            <p className="mt-4 text-blue-100 leading-7">
+              Empowering organizations and individuals across Africa with
+              high‑quality capacity‑building solutions and expert business
+              support.
             </p>
-          </motion.div>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                aria-label="Twitter"
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 transition hover:bg-white/25"
+              >
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                aria-label="Facebook"
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 transition hover:bg-white/25"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                aria-label="Instagram"
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 transition hover:bg-white/25"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                aria-label="LinkedIn"
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 transition hover:bg-white/25"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-white/90">
+              Quick Links
+            </h3>
+            <ul className="mt-4 space-y-3 text-blue-100">
+              <li>
+                <a href="#home" className="hover:text-white transition">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition">
+                  Services
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/program/consulting"
+                  className="hover:text-white transition"
+                >
+                  Programs
+                </Link>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-white transition">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
 
           {/* Contact */}
-          <motion.div 
-            className="text-center p-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <div className="w-16 h-16 bg-blue-600 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Phone className="w-8 h-8 text-white" fill="currentColor" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">☎ CONTACT US</h3>
-            <p className="text-blue-100">
-              Phone: +250788520674<br />
-              +250781833313<br />
-              Email: mdsexperts5@gmail.com<br />
-              P.O. Box: xxx, Kigali – Rwanda
-            </p>
-          </motion.div>
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-white/90">
+              Contact
+            </h3>
+            <ul className="mt-4 space-y-3 text-blue-100">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 rounded-md bg-white/10 p-1.5 ring-1 ring-white/20">
+                  <Phone className="h-4 w-4" />
+                </span>
+                <div>
+                  <p>+250788520674</p>
+                  <p>+250781833313</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 rounded-md bg-white/10 p-1.5 ring-1 ring-white/20">
+                  <Mail className="h-4 w-4" />
+                </span>
+                <a
+                  href="mailto:mdsexperts5@gmail.com"
+                  className="hover:text-white transition"
+                >
+                  mdsexperts5@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 rounded-md bg-white/10 p-1.5 ring-1 ring-white/20">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                <p>
+                  Kigali, Gasabo, Kanombe kabeza
+                  <br />
+                  KK-276 ST, Kigali – Rwanda
+                </p>
+              </li>
+            </ul>
+          </div>
 
-          {/* Social Media */}
-          <motion.div 
-            className="text-center p-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <div className="w-16 h-16 bg-blue-600 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-8 h-8 text-white" />
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-white/90">
+              Stay up to date
+            </h3>
+            <p className="mt-4 text-blue-100">
+              Get updates on programs and events.
+            </p>
+            <form className="mt-4 flex max-w-md gap-2" action="#" method="post">
+              <label htmlFor="footer-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="footer-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-white placeholder-white/60 outline-none ring-1 ring-white/10 backdrop-blur-md transition focus:border-white/40 focus:ring-white/30"
+              />
+              <button
+                type="submit"
+                className="rounded-lg bg-white/20 px-4 py-2 text-sm font-semibold ring-1 ring-white/30 transition hover:bg-white/30"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p className="mt-2 text-xs text-white/70">
+              We care about your privacy.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-14 border-t border-white/10 py-6 text-sm text-blue-100">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p>
+              © {new Date().getFullYear()} MDS Experts Ltd. All rights
+              reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <a href="/terms" className="hover:text-white transition">
+                Terms
+              </a>
+              <a href="/privacy" className="hover:text-white transition">
+                Privacy
+              </a>
+              <a href="#contact" className="hover:text-white transition">
+                Contact
+              </a>
             </div>
-            <h3 className="text-xl font-bold mb-4">🔗 Follow Us</h3>
-            <div className="flex justify-center gap-4">
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Twitter className="w-5 h-5 text-blue-600" fill="currentColor" />
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-              <Facebook className="w-5 h-5 text-blue-600" fill="currentColor" />
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Instagram className="w-5 h-5 text-blue-600"  />
-              
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Linkedin className="w-5 h-5 text-blue-600" fill="currentColor" />
-              </motion.a>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </section>
-  )
-}
+    </footer>
+  );
+};
 
-export default ContactSection 
+export default ContactSection;

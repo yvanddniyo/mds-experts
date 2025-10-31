@@ -1,11 +1,12 @@
-import { motion } from "framer-motion"
-import Image from "next/image"
-import teachingImg from "@/assets/teaching.jpeg"
-import businessImg from "@/assets/business.jpeg"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import teachingImg from "@/assets/illustrate/business-plan.svg";
+import businessImg from "@/assets/illustrate/business-decisions.svg";
+import EnhancedTitle from "@/lib/EnhancedTitle";
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="py-20 bg-gray-50">
+    <section id="why-us" className="py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -14,9 +15,7 @@ const WhyUsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Us
-          </h2>
+          <EnhancedTitle>Why Us</EnhancedTitle>
         </motion.div>
 
         {/* Row 1: Content Left, Image Right */}
@@ -31,12 +30,16 @@ const WhyUsSection = () => {
               Cost-Effective Solutions for Your Business
             </h3>
             <p className="text-gray-700 mb-4">
-              At MDS Experts Ltd, we provide innovative outsourcing strategies designed to boost
-              efficiency and cut operational costs dramatically. With our commitment to
-              excellence and competitive pricing, you gain maximum value while driving your
-              business forward.
+              At MDS Experts Ltd, we provide innovative outsourcing strategies
+              designed to boost efficiency and cut operational costs
+              dramatically. With our commitment to excellence and competitive
+              pricing, you gain maximum value while driving your business
+              forward.
             </p>
-            <a href="#contact" className="text-blue-600 font-semibold underline">
+            <a
+              href="#contact"
+              className="text-blue-600 font-semibold underline"
+            >
               Get in touch with us
             </a>
           </motion.div>
@@ -48,8 +51,15 @@ const WhyUsSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="relative w-full h-[200px] md:h-[220px] lg:h-[380px]  rounded-2xl p-2 shadow-xl ring-1 ring-gray-200">
-              <Image src={teachingImg} alt="Business operations" fill className="object-contain" priority />
+            <div className="relative w-full h-[200px] md:h-[220px] lg:h-[380px] ">
+              <Image
+                src={teachingImg}
+                alt="Business operations"
+                fill
+                className="object-contain"
+                priority
+                fetchPriority="high"
+              />
             </div>
           </motion.div>
         </div>
@@ -63,8 +73,15 @@ const WhyUsSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="relative w-full h-[200px] md:h-[220px] lg:h-[380px] rounded-2xl  p-2 shadow-xl ring-1 ring-gray-200">
-              <Image src={businessImg} alt="Consulting solutions" fill className="object-contain" priority />
+            <div className="relative w-full h-[200px] md:h-[220px] lg:h-[380px]">
+              <Image
+                src={businessImg}
+                alt="Consulting solutions"
+                fill
+                className="object-contain"
+                priority
+                fetchPriority="high"
+              />
             </div>
           </motion.div>
 
@@ -79,21 +96,23 @@ const WhyUsSection = () => {
               Cost-Effective Consulting Solutions for Lasting Impact
             </h3>
             <p className="text-gray-700 mb-4">
-              MDS Experts Ltd empowers organizations with tailored consulting strategies that
-              streamline operations, improve performance, and reduce costs. Our commitment
-              to delivering measurable results ensures you gain maximum value while staying
-              ahead in a competitive market.
+              MDS Experts Ltd empowers organizations with tailored consulting
+              strategies that streamline operations, improve performance, and
+              reduce costs. Our commitment to delivering measurable results
+              ensures you gain maximum value while staying ahead in a
+              competitive market.
             </p>
-            <a href="#contact" className="text-blue-600 font-semibold underline">
+            <a
+              href="#contact"
+              className="text-blue-600 font-semibold underline"
+            >
               Get in touch with us
             </a>
           </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default WhyUsSection
-
-
+export default WhyUsSection;
