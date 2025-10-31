@@ -11,7 +11,8 @@ export default function ProgramIndexPage() {
             Our Programs & Services
           </h1>
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
-            Explore our business consultancy and professional training offerings.
+            Explore our business consultancy and professional training
+            offerings.
           </p>
         </header>
 
@@ -48,18 +49,25 @@ export default function ProgramIndexPage() {
         {PROGRAMS.length > 2 && (
           <div className="mt-12 space-y-6">
             {PROGRAMS.filter((p) => p.listOnly).map((p) => (
-              <div key={p.slug} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">{p.title}</h3>
+              <div
+                key={p.slug}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {p.title}
+                </h3>
                 <div className="mt-3 space-y-3 text-slate-700">
                   {p.summary && <p>{p.summary}</p>}
                   {p.sections?.length ? (
                     <ul className="mt-2 list-disc pl-6 space-y-1">
-                      {p.sections.flatMap((s) => [
-                        ...(s.paragraphs ?? []),
-                        ...(s.bullets ?? []),
-                      ]).map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
+                      {p.sections
+                        .flatMap((s) => [
+                          ...(s.paragraphs ?? []),
+                          ...(s.bullets ?? []),
+                        ])
+                        .map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
                     </ul>
                   ) : null}
                 </div>

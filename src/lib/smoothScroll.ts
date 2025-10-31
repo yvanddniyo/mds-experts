@@ -4,7 +4,7 @@ export const smoothScrollTo = (elementId: string) => {
     const offsetTop = element.offsetTop - 80; // Account for navbar height
     window.scrollTo({
       top: offsetTop,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
 };
@@ -12,6 +12,6 @@ export const smoothScrollTo = (elementId: string) => {
 export const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
-}; 
+};

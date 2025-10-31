@@ -1,159 +1,152 @@
-"use client"
+"use client";
 
+import { useState } from "react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { NavLinkProps } from "@/type";
+import { NAV_LINKS } from "@/constants/Info";
+import { useScroll } from "@/Hooks/useScroll";
+import mdsExpert from "@/assets/MDS-White.png";
+import { Menu, X } from "lucide-react";
+import { smoothScrollTo, scrollToTop } from "@/lib/smoothScroll";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
-import { useState } from "react"
-import Image from "next/image"
-import { NavLinkProps } from "@/type"
-import { NAV_LINKS } from "@/constants/Info"
-import { useScroll } from "@/Hooks/useScroll"
-import mdsExpert from "@/assets/MDS-White.png"
-import { Facebook, Instagram, Linkedin, Menu, Twitter, X } from "lucide-react"
-import { smoothScrollTo, scrollToTop } from "@/lib/smoothScroll"
-import { Button } from "./ui/button"
-import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
+const NavLink = ({
+  href,
+  label,
+  scroll,
+  isActive = false,
+  activeLink,
+  onClick,
+}: NavLinkProps) => {
+  const pathname = usePathname();
+  const normalize = (s?: string) => {
+    if (!s) return "";
+    if (s === "/") return "/";
+    return s.replace(/\/+$/, "");
+  };
+  const currentPath = normalize(pathname) || "/";
+  const targetPath = normalize(href);
+  let active = false;
+  if (href?.startsWith("#")) {
+    active = activeLink === href;
+  } else if (href) {
+    if (targetPath === "/") active = currentPath === "/";
+    else active = currentPath.startsWith(targetPath);
+  } else {
+    active = isActive;
+  }
 
-
-const NavLink = ({ label, scroll, isActive = false, onClick }: NavLinkProps) => (
-  <button
-    onClick={onClick}
-    className={`relative cursor-pointer ${scroll ? "text-gray-600" : "text-white"} px-4 py-2 text-sm font-medium transition-all duration-200 group ${
-      scroll ? "text-gray-600" : "text-white"
-    }`}
-  >
-    <span className="block relative text-lg whites">
-      {label}
-      <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full ${
-        isActive ? "w-full" : ""
-      }`}></span>
-    </span>
-  </button>
-)
+  return (
+    <button
+      onClick={onClick}
+      className={`relative cursor-pointer ${scroll ? "text-gray-600" : "text-white"} px-4 py-2 text-sm font-medium transition-all duration-200 group ${
+        scroll ? "text-gray-600" : "text-white"
+      }`}
+    >
+      <span className="block relative text-lg text-white">
+        {label}
+        <span
+          className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-300 ${
+            active ? "w-full" : "w-0 group-hover:w-full"
+          }`}
+        ></span>
+      </span>
+    </button>
+  );
+};
 
 export const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeLink, setActiveLink] = useState("/")
-  const { isScrolled } = useScroll()
-  const router = useRouter()
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("/");
+  const { isScrolled } = useScroll();
+  const router = useRouter();
+  const pathname = usePathname();
   const handleLinkClick = (href: string) => {
-    setActiveLink(href)
-    setIsMobileMenuOpen(false)
+    setActiveLink(href);
+    setIsMobileMenuOpen(false);
 
     // Route navigation for pathname links
     if (href.startsWith("/")) {
-      router.push(href)
-      return
+      router.push(href);
+      return;
     }
 
     // Handle smooth scrolling for hash links
     if (href === "#home") {
-      scrollToTop()
-      return
+      scrollToTop();
+      return;
     }
-    const elementId = href.replace("#", "")
-    smoothScrollTo(elementId)
-  }
+    const elementId = href.replace("#", "");
+    smoothScrollTo(elementId);
+  };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-sky-200 backdrop-blur-md"
-          : "bg-sky-700"
+          ? "bg-gradient-to-b from-[#0056A3] to-[#007BCE] backdrop-blur-md"
+          : pathname === "/"
+            ? "bg-transparent"
+            : "bg-gradient-to-b from-[#0056A3] to-[#007BCE] backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="w-full flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="relative w-24 h-24 z-50 cursor-pointer" onClick={() => router.push("/")}>
+            <div
+              className="relative w-24 h-24 z-50 cursor-pointer"
+              onClick={() => router.push("/")}
+            >
               <Image
                 src={mdsExpert}
                 alt="MDS Experts Logo"
                 fill
                 className="object-contain"
                 priority
-
+                fetchPriority="high"
               />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.href}
                 href={link.href}
                 scroll={isScrolled}
                 label={link.label}
+                activeLink={activeLink}
                 isActive={activeLink === link.href}
                 onClick={() => handleLinkClick(link.href)}
               />
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="justify-center gap-4 hidden md:flex">
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Twitter className="w-5 h-5 text-blue-600" fill="currentColor" />
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-              <Facebook className="w-5 h-5 text-blue-600" fill="currentColor" />
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Instagram className="w-5 h-5 text-blue-600"  />
-              
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-200 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Linkedin className="w-5 h-5 text-blue-600" fill="currentColor" />
-              </motion.a>
-            </div>  
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`${
-                isScrolled ? "text-gray-700" : "text-white"
-              }`}
+              className={`${isScrolled ? "text-gray-700" : "text-white"}`}
             >
-              {
-                isMobileMenuOpen ? (
-                  <X className="size-8 text-white" />
-                ) : (
-                  <Menu className="size-8 text-white" />
-                )
-              }
+              {isMobileMenuOpen ? (
+                <X className="size-8 text-white" />
+              ) : (
+                <Menu className="size-8 text-white" />
+              )}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation - Right Sidebar */}
-        <div className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}>
+        <div
+          className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           {/* Mobile menu header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
@@ -202,12 +195,12 @@ export const Navbar = () => {
 
         {/* Mobile overlay */}
         {isMobileMenuOpen && (
-          <div 
+          <div
             className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={() => setIsMobileMenuOpen(false)}
           />
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
