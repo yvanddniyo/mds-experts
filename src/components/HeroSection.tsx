@@ -30,7 +30,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.span
-            className="block text-pink-400 text-2xl md:text-6xl font-semibold mb-6"
+            className="block text-pink-400 text-4xl md:text-6xl font-semibold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
