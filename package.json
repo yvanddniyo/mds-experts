@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "build": "next build && prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\" && next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap",
     "export": "next export"
   },
   "dependencies": {
