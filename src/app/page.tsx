@@ -26,7 +26,6 @@ export default function Home() {
         <WhatWeDoSection />
         <ContactUs />
         <ContactSection />
-        {/* <CTASection /> */}
       </main>
     </div>
   );
