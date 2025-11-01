@@ -7,7 +7,6 @@ export const NAV_LINKS = [
   { href: "#contact", label: "Contact Us" },
 ] as const;
 
-
 export const KEYWORDS = [
   "MDS Experts Ltd",
   "Rwanda",

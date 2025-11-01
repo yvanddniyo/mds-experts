@@ -1,0 +1,16 @@
+name: Deploy to cPanel
+on:
+  push:
+    branches: [ main ]  # Triggers on push to main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to cPanel
+        uses: pinkasey/cpanel-deploy-action@v1
+        with:
+          hostname: ${{ secrets.CPANEL_HOST }}
+          cpanel_token: ${{ secrets.CPANEL_TOKEN }}
+          cpanel_username: ${{ secrets.CPANEL_USER }}
+          repository_root: '/home/mdsexper/mds-experts'
+          branch: main
