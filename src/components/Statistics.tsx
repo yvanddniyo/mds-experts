@@ -1,20 +1,37 @@
 "use client";
 import { motion } from "motion/react";
 import { AnimatedNumber } from "../../components/motion-primitives/animated-number";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Statistics = () => {
   const [professionValue, setProfessionValue] = useState(0);
   const [experienceValue, setExperienceValue] = useState(0);
-  const [country, setCountry] = useState(0);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   useEffect(() => {
-    setProfessionValue(120);
-    setExperienceValue(18);
-    setCountry(12);
-  }, []);
+    if (!containerRef.current || hasAnimated) return;
+
+    const element = containerRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !hasAnimated) {
+          setProfessionValue(28);
+          setExperienceValue(3);
+          setHasAnimated(true);
+        }
+      },
+      { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0.2 }
+    );
+
+    observer.observe(element);
+    return () => observer.unobserve(element);
+  }, [hasAnimated]);
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-3 gap-6"
+      ref={containerRef}
+      className="grid grid-cols-1 md:grid-cols-2 gap-6"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -50,11 +67,11 @@ const Statistics = () => {
           <span className="text-orange-500">+</span>
         </div>
         <div className="text-sm text-gray-600 font-medium">
-          Trained Certified Professionals (PMP, ACP, PBA)
+          Trained Professionals (PMP, ACP, PBA)
         </div>
       </div>
 
-      <div className="text-center p-4 bg-white rounded-lg shadow-md">
+      {/* <div className="text-center p-4 bg-white rounded-lg shadow-md">
         <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">
           <AnimatedNumber
             className="inline-flex items-center font-bold  text-orange-500 text-3xl"
@@ -69,7 +86,7 @@ const Statistics = () => {
         <div className="text-sm text-gray-600 font-medium">
           Countries Operated in Around the World
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

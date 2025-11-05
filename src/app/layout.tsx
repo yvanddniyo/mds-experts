@@ -20,8 +20,7 @@ const afacode = Afacad({
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "MDS Experts Ltd | Professional Training & Consultancy in Rwanda",
+    default: "MDS Experts Ltd | Professional Training & Consultancy in Rwanda",
     template: "%s | MDS Experts Ltd",
   },
   description:
