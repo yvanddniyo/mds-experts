@@ -79,10 +79,10 @@ const ContactUs = () => {
                     We reply within 1–2 business days
                   </p>
                   <a
-                    href="mailto:mdsexperts5@gmail.com"
+                    href="mailto:info@mdsexpertspro.com"
                     className="mt-2 inline-block text-sm font-medium text-indigo-700 hover:underline"
                   >
-                    mdsexperts5@gmail.com
+                    info@mdsexpertspro.com
                   </a>
                 </div>
               </div>

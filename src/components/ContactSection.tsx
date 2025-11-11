@@ -129,10 +129,10 @@ const ContactSection = () => {
                   <Mail className="h-4 w-4" />
                 </span>
                 <a
-                  href="mailto:mdsexperts5@gmail.com"
+                  href="mailto:info@mdsexpertspro.com"
                   className="hover:text-white transition"
                 >
-                  mdsexperts5@gmail.com
+                  info@mdsexpertspro.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
