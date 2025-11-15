@@ -4,6 +4,7 @@ import mdsExpert2 from "@/assets/mds-jpg-removebg-preview.png";
 import "./globals.css";
 import { KEYWORDS } from "@/constants/Info";
 import Link from "next/link";
+import { Toaster } from "@/components/ui/sonner";
 
 const SITE_URL = "https://mdsexpertspro.com/";
 const OG_IMAGE_URL = new URL(mdsExpert2.src, SITE_URL).toString();
@@ -135,6 +136,7 @@ export default function RootLayout({
         className={`${albertSans.variable} ${afacode.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

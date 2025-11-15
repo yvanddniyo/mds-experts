@@ -1,7 +1,21 @@
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
 import EnhancedTitle from "@/lib/EnhancedTitle";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./ui/form";
+import { Input } from "./ui/input";
+import useContactus from "./Hooks/useContactus";
+import { Textarea } from "./ui/textarea";
+import { FieldValues, SubmitHandler } from "react-hook-form";
+import { Button } from "./ui/button";
 
 const ContactUs = () => {
+  const { form, onSubmit, isLoading } = useContactus();
   return (
     <section className="relative overflow-hidden">
       {/* Background accents */}
@@ -125,105 +139,115 @@ const ContactUs = () => {
           {/* Form */}
           <div className="lg:col-span-3">
             <div className="rounded-2xl bg-white/90 p-6 shadow-sm ring-1 ring-gray-200 backdrop-blur-sm sm:p-8">
-              <form
-                className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-                action="#"
-                method="post"
-              >
-                <div className="sm:col-span-1">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Full name
-                  </label>
-                  <input
-                    id="name"
+              <Form {...form}>
+                <form
+                  className="flex flex-col gap-6"
+                  onSubmit={form.handleSubmit(
+                    onSubmit as SubmitHandler<FieldValues>,
+                  )}
+                >
+                  <FormField
                     name="name"
-                    type="text"
-                    required
-                    placeholder="Jane Doe"
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-sm font-medium text-gray-700">
+                          Full name
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            id="name"
+                            type="text"
+                            placeholder="Micheal Nsengimana"
+                            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="sm:col-span-1">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
+                  <FormField
                     name="email"
-                    type="email"
-                    required
-                    placeholder="jane@example.com"
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-sm font-medium text-gray-700">
+                          Email
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            id="name"
+                            type="text"
+                            placeholder="your@email.com"
+                            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="sm:col-span-1">
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Company (optional)
-                  </label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    placeholder="Your organization"
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-                  />
-                </div>
-
-                <div className="sm:col-span-1">
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    id="subject"
+                  <FormField
                     name="subject"
-                    type="text"
-                    required
-                    placeholder="How can we help?"
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-sm font-medium text-gray-700">
+                          Subject
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            id="subject"
+                            type="text"
+                            placeholder="How can we help?"
+                            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="sm:col-span-2">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
+                  <FormField
                     name="message"
-                    required
-                    rows={6}
-                    placeholder="Tell us a bit about your project or question..."
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-sm font-medium text-gray-700">
+                          Message
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea
+                            id="message"
+                            rows={10}
+                            cols={30}
+                            maxLength={1000}
+                            placeholder="Tell us a bit about your project or question..."
+                            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400  outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="sm:col-span-2">
-                  <button
-                    type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:from-sky-700 hover:to-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 sm:w-auto cursor-pointer"
-                  >
-                    Send message
-                    <Send className="h-4 w-4" />
-                  </button>
-                </div>
-              </form>
+                  <div className="sm:col-span-2">
+                    <Button
+                      type="submit"
+                      className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:from-sky-700 hover:to-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 sm:w-auto cursor-pointer"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        "Send message"
+                      )}
+                      {isLoading ? null : <Send className="h-4 w-4" />}
+                    </Button>
+                  </div>
+                </form>
+              </Form>
             </div>
           </div>
         </div>
