@@ -3,7 +3,6 @@ import { Aleo, Afacad } from "next/font/google";
 import mdsExpert2 from "@/assets/mds-jpg-removebg-preview.png";
 import "./globals.css";
 import { KEYWORDS } from "@/constants/Info";
-import Link from "next/link";
 import { Toaster } from "@/components/ui/sonner";
 
 const SITE_URL = "https://mdsexpertspro.com/";
@@ -110,27 +109,17 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          // WebSite structured data with SearchAction
+          // WebSite structured data (no SearchAction until on-site search exists)
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "MDS Experts Ltd",
               url: SITE_URL,
-              potentialAction: {
-                "@type": "SearchAction",
-                target: `${SITE_URL}search?q={search_term_string}`,
-                "query-input": "required name=search_term_string",
-              },
             }),
           }}
         />
-        <Link rel="canonical" href={SITE_URL}>
-          <meta name="robots" content="index, follow" />
-          <meta name="googlebot" content="index, follow" />
-          <meta name="google" content="notranslate" />
-          <meta name="google" content="notranslate" />
-        </Link>
+        <link rel="canonical" href={SITE_URL} />
       </head>
       <body
         className={`${albertSans.variable} ${afacode.variable} antialiased`}

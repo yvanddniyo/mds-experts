@@ -30,9 +30,57 @@ export default async function ProgramDetailPage({ params }: PageProps) {
   const program = getProgramBySlug(slug);
   if (!program || program.listOnly) notFound();
 
+  const SITE_URL = "https://mdsexpertspro.com/";
+  const programUrl = `${SITE_URL}program/${slug}`;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Programs",
+        item: `${SITE_URL}program`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: program.title,
+        item: programUrl,
+      },
+    ],
+  };
+
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: program.title,
+    description: program.summary,
+    url: programUrl,
+    provider: {
+      "@type": "Organization",
+      name: "MDS Experts Ltd",
+      sameAs: SITE_URL,
+    },
+  };
+
   return (
     <section className="min-h-screen w-full bg-gradient-to-b from-white to-slate-50 py-24">
       <div className="mx-auto max-w-3xl px-4">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+        />
         <div className="mb-6">
           <Link
             href="/program"
