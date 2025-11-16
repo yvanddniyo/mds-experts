@@ -2,7 +2,32 @@
 import { motion } from "framer-motion";
 import Statistics from "./Statistics";
 import EnhancedTitle from "@/lib/EnhancedTitle";
+import mdsExpert2 from "@/assets/mds-jpg-removebg-preview.png";
+import { KEYWORDS } from "@/constants/Info";
 
+export const metadata = {
+  title:
+    "About MDS Experts Ltd | Professional Training & Consultancy in Rwanda",
+  description:
+    "MDS Experts Ltd is a Kigali-based professional training and consultancy center specializing in capacity building, business advisory, project management, and strategic development. The company empowers professionals, entrepreneurs, and organizations through globally recognized training programs, certification preparation courses, and business coaching services.",
+  url: "https://mdsexpertspro.com/about",
+  image: mdsExpert2.src,
+  siteName: "MDS Experts Ltd",
+  author: "MDS Experts Ltd",
+  publisher: "MDS Experts Ltd",
+  copyright: "MDS Experts Ltd",
+  type: "website",
+  locale: "en_US",
+  keywords: KEYWORDS,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-gray-50 h-[92vh]">

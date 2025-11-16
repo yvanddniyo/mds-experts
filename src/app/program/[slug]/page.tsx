@@ -40,18 +40,23 @@ export default async function ProgramDetailPage({ params }: PageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
+        description:
+          "Home page of MDS Experts Ltd Training and Consultancy Center.",
         item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Programs",
+        description:
+          "Programs page of MDS Experts Ltd Training and Consultancy Center. where you can find all the programs offered by the company.",
         item: `${SITE_URL}program`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: program.title,
+        description: `Details page of ${program.title} program of MDS Experts Ltd Training and Consultancy Center.`,
         item: programUrl,
       },
     ],
