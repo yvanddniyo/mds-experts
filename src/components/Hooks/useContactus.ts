@@ -19,7 +19,7 @@ const schema = z.object({
     .min(1, "Message is required")
     .max(1000, "Message must be less than 1000 characters"),
 });
-const templateId = "template_j3mdswn";
+const templateId = "template_htkms9a";
 const serviceId = "service_wyj0wep";
 const publicKey = "lcQ98NFUkGprVdDnL";
 
@@ -45,7 +45,8 @@ const useContactus = () => {
         {
           from_name: data.name,
           to_name: "MDS Experts Ltd",
-          reply_to: data.email,
+          from_email: data.email,
+          to_email: "nyvan80076@gmail.com",
           subject: data.subject,
           message: data.message,
         },
@@ -61,6 +62,7 @@ const useContactus = () => {
       })
       .catch((error: unknown) => {
         setIsLoading(false);
+        console.error("EmailJS send error:", error);
         toast.error("An error occurred while sending the message " + error, {
           duration: 5000,
           position: "top-right",

@@ -7,3 +7,8 @@ export interface NavLinkProps {
   onClick?: () => void;
   scroll?: boolean;
 }
+export interface TrainingProgram {
+  id: string;
+  title: string;
+  description: string;
+}

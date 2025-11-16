@@ -1,3 +1,5 @@
+import { TrainingProgram } from "@/type";
+
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about/", label: "About Us" },
@@ -63,4 +65,43 @@ export const KEYWORDS = [
   "Kigali Rwanda",
   "East Africa",
   "Consulting Services",
+];
+
+export const programs: TrainingProgram[] = [
+  {
+    id: "pmp",
+    title: "Project Management Professional (PMP) – Certification Prep",
+    description:
+      "Master leadership, planning, execution, and control aligned to PMI global standards.",
+  },
+  {
+    id: "pba",
+    title: "PMI Professional in Business Analysis (PMI‑PBA) – Prep",
+    description:
+      "Build advanced capabilities in needs assessment, requirements analysis, and stakeholder engagement.",
+  },
+  {
+    id: "acp",
+    title: "Agile Certified Practitioner (PMI‑ACP) – Prep",
+    description:
+      "Learn adaptive delivery using Agile principles and Scrum techniques for real‑world projects.",
+  },
+  {
+    id: "strategic",
+    title: "Strategic Planning & Project Management Workshop",
+    description:
+      "Design and implement effective strategic and operational plans for sustainable project implementation.",
+  },
+  {
+    id: "me",
+    title: "Planning, Monitoring & Evaluation (M&E) for Development",
+    description:
+      "Hands‑on M&E frameworks, indicators, quality data collection, and results‑based reporting.",
+  },
+  {
+    id: "coaching",
+    title: "Executive Business Coaching Program",
+    description:
+      "Elevate leadership, communication, and coaching for organizational performance and growth.",
+  },
 ];

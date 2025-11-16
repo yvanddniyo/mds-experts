@@ -5,6 +5,7 @@ import ServicesSection from "../components/ServicesSection";
 import MissionVisionSection from "../components/MissionVisionSection";
 import WhyUsSection from "../components/WhyUsSection";
 import WhatWeDoSection from "../components/WhatWeDoSection";
+import TrainingProgramsSection from "../components/TrainingProgramsSection";
 import ContactSection from "../components/ContactSection";
 // import CTASection from "../components/CTASection";
 import ContactUs from "../components/ContactUs";
@@ -24,6 +25,7 @@ export default function Home() {
         <MissionVisionSection />
         <WhyUsSection />
         <WhatWeDoSection />
+        <TrainingProgramsSection />
         <ContactUs />
         <ContactSection />
       </main>

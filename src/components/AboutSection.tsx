@@ -25,23 +25,22 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <p className="text-lg text-gray-700 mb-6">
-              MDS Experts Ltd is a leading Rwandan firm specializing in tax
-              consultancy, bookkeeping, and professional training courses such
-              as PMP, PBA, and ACP. We are dedicated to advancing development
-              across Africa by empowering individuals and organizations through
-              high-quality capacity-building and expert business support
-              services.
+              MDS Experts Ltd is a Kigali-based professional training and
+              consultancy center specializing in capacity building, business
+              advisory, project management, and strategic development.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Our comprehensive business solutions are designed to enhance
-              operational efficiency, ensure financial compliance, and support
-              strategic decision-making.
+              The company empowers professionals, entrepreneurs, and
+              organizations through globally recognized training programs,
+              certification preparation courses, and business coaching services.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              Driven by a commitment to adapt to our clients’ evolving needs,
-              foster continuous improvement, and encourage self-assessment, we
-              proudly stand as a trusted partner in building stronger businesses
-              and more effective teams.
+              MDS Experts partners with both local and international
+              institutions to promote excellence, innovation, and sustainable
+              growth in Rwanda and beyond. Our flagship programs have helped
+              professionals across East Africa enhance their performance, obtain
+              global certifications, and lead impactful change in their
+              organizations.
             </p>
             <p className="text-lg text-gray-700 mb-8">
               At MDS Experts Ltd, we don’t just provide services we enable you
